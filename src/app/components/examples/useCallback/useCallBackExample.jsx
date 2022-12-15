@@ -10,7 +10,7 @@ const UseCallBackExample = () => {
   const handleChange = ({ target }) => {
     setData((prevState) => ({ ...prevState, [target.name]: target.value }))
   }
-  //Without callback
+  // Without callback
   const validateWithOutCallback = (data) => {
     console.log(data)
   }
@@ -18,7 +18,7 @@ const UseCallBackExample = () => {
     withOutCallback.current++
   }, [validateWithOutCallback])
 
-  //With Callback
+  // With Callback
   const validateWithCallback = useCallback((data) => {
     console.log(data)
   }, [])

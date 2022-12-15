@@ -13,8 +13,6 @@ const withFunctions = (Component) => (props) => {
     setAuth(!auth)
   }
 
-  console.log(isAuth)
-
   return (
     <>
       <CardWrapper>

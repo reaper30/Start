@@ -4,7 +4,7 @@ import withLogin from "./withLogin"
 import CardWrapper from "../../common/Card"
 import SmallTitle from "../../common/typografy/smallTitle"
 import Divider from "../../common/divider"
-import withPropsStyles from "./withPropsStyoles"
+import withPropsStyles from "./withPropStyles"
 
 const HOCExample = () => {
   const ComponentWithAuth = withLogin(Component)
