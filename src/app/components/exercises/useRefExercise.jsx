@@ -4,7 +4,6 @@ const UseRefExercise = () => {
   const blockRef = useRef()
 
   const handleClick = () => {
-    blockRef.current.style.color = "black"
     blockRef.current.style.height = "150px"
     blockRef.current.style.width = "80px"
     blockRef.current.children[0].textContent = "text"

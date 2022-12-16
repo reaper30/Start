@@ -16,6 +16,7 @@ module.exports = {
     "react/display-name": "off",
     semi: ["error", "never"],
     indent: [0, 4],
+    "spaced-comment": ["error", "always"],
     "space-before-function-paren": [
       "error",
       { anonymous: "always", named: "never" }

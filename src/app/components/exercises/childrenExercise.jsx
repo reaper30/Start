@@ -19,30 +19,35 @@ const ChildrenExercise = () => {
     </CollapseWrapper>
   )
 }
+export default ChildrenExercise
 
 const BlockComponent = ({ children }) => {
   const countChildren = React.Children.count(children)
+  const arrayOfChildren = React.Children.toArray(children)
 
   if (!countChildren) {
     return <div>Нет элементов</div>
   }
 
-  return (
-    <ul>
-      {React.Children.map(children, (child) => {
-        if (child.type === Component) {
-          return <li type="1">{child}</li>
-        }
-      })}
-    </ul>
-  )
+  return React.Children.map(arrayOfChildren, (child) => {
+    return React.cloneElement(child, {
+      ...child.props,
+      num: +child.key.replace(".", "") + 1
+    })
+  })
 }
+
 BlockComponent.propTypes = {
-  children: PropTypes.array
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node
+  ])
 }
 
-const Component = () => {
-  return <div>Компонент списка</div>
+const Component = ({ num }) => {
+  return <div>{num}. Компонент списка</div>
 }
 
-export default ChildrenExercise
+Component.propTypes = {
+  num: PropTypes.oneOfType([PropTypes.number, PropTypes.string])
+}
